@@ -47,7 +47,7 @@ for(let i = 0; i < navLinks.length; i++) {
   navLinks[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
 }
 
-// CTA Content
+// CTA Content section
 let headingText = siteContent.cta.h1;
 headingText = headingText.split(" ").join("<br> ");
 document.querySelector('h1').innerHTML = headingText;
@@ -58,7 +58,7 @@ const ctaImg = document.querySelector('#cta-img');
 ctaImg.setAttribute('src', siteContent.cta['img-src'])
 
 
-// main Content
+// main Content section
 const mainContentHeadings = document.querySelectorAll('.text-content h4');
 mainContentHeadings[0].textContent = siteContent['main-content']['features-h4'];
 mainContentHeadings[1].textContent = siteContent['main-content']['about-h4'];
@@ -76,4 +76,12 @@ mainContentText[4].textContent = siteContent['main-content']['vision-content'];
 const middleImage = document.querySelector('#middle-img');
 middleImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
-// contact Info
+// contact Info section
+const contactInfo = document.querySelectorAll('.contact');
+contactInfo[0].childNodes[1].textContent = siteContent['contact']['contact-h4'];
+contactInfo[0].childNodes[2].textContent = siteContent['contact']['address']
+contactInfo[0].childNodes[3].textContent = siteContent['contact']['phone']
+contactInfo[0].childNodes[4].textContent = siteContent['contact']['email']
+
+
+// footer section
