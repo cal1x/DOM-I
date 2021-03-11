@@ -87,3 +87,8 @@ contactInfo[0].childNodes[4].textContent = siteContent['contact']['email']
 // footer section
 const footer = document.querySelector('footer p')
 footer.textContent = siteContent['footer']['copyright'];
+
+
+// change color of navigation text to green
+const newNavTextColor = document.querySelectorAll('nav a');
+newNavTextColor.forEach((n) => (n.style.color = 'green'));
