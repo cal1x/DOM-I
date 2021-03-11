@@ -40,3 +40,67 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// nav Links
+const navLinks = document.querySelectorAll('nav a');
+for(let i = 0; i < navLinks.length; i++) {
+  navLinks[i].textContent = siteContent.nav[`nav-item-${i}`];
+}
+
+// CTA Content section
+let headingText = siteContent.cta.h1;
+headingText = headingText.split(" ").join("<br> ");
+document.querySelector('h1').innerHTML = headingText;
+
+document.querySelector('.cta button').textContent = siteContent.cta.button;
+
+const ctaImg = document.querySelector('#cta-img');
+ctaImg.setAttribute('src', siteContent.cta['img-src'])
+
+
+// main Content section
+const mainContentHeadings = document.querySelectorAll('.text-content h4');
+mainContentHeadings[0].textContent = siteContent['main-content']['features-h4'];
+mainContentHeadings[1].textContent = siteContent['main-content']['about-h4'];
+mainContentHeadings[2].textContent = siteContent['main-content']['services-h4'];
+mainContentHeadings[3].textContent = siteContent['main-content']['product-h4'];
+mainContentHeadings[4].textContent =siteContent['main-content']['vision-h4'];
+
+const mainContentText = document.querySelectorAll('.text-content p');
+mainContentText[0].textContent = siteContent['main-content']['features-content'];
+mainContentText[1].textContent = siteContent['main-content']['about-content'];
+mainContentText[2].textContent = siteContent['main-content']['services-content'];
+mainContentText[3].textContent = siteContent['main-content']['product-content'];
+mainContentText[4].textContent = siteContent['main-content']['vision-content'];
+
+const middleImage = document.querySelector('#middle-img');
+middleImage.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+// contact Info section
+const contactInfo = document.querySelectorAll('.contact');
+contactInfo[0].childNodes[1].textContent = siteContent['contact']['contact-h4'];
+contactInfo[0].childNodes[2].textContent = siteContent['contact']['address']
+contactInfo[0].childNodes[3].textContent = siteContent['contact']['phone']
+contactInfo[0].childNodes[4].textContent = siteContent['contact']['email']
+
+
+// footer section
+const footer = document.querySelector('footer p')
+footer.textContent = siteContent['footer']['copyright'];
+
+
+// change color of navigation text to green
+const newNavTextColor = document.querySelectorAll('nav a');
+newNavTextColor.forEach((n) => (n.style.color = 'green'));
+
+
+// add two items to navigation
+const contactLink = document.createElement('a');
+contactLink.textContent = 'Contact';
+contactLink.setAttribute('href', '#');
+document.querySelector('nav').appendChild(contactLink);
+
+const homeLink = document.createElement('a');
+homeLink.textContent = 'Home';
+homeLink.setAttribute('href', '#');
+document.querySelector('nav').prepend(homeLink);
