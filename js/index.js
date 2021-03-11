@@ -44,7 +44,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 // nav Links
 const navLinks = document.querySelectorAll('nav a');
 for(let i = 0; i < navLinks.length; i++) {
-  navLinks[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
+  navLinks[i].textContent = siteContent.nav[`nav-item-${i}`];
 }
 
 // CTA Content section
@@ -92,3 +92,15 @@ footer.textContent = siteContent['footer']['copyright'];
 // change color of navigation text to green
 const newNavTextColor = document.querySelectorAll('nav a');
 newNavTextColor.forEach((n) => (n.style.color = 'green'));
+
+
+// add two items to navigation
+const contactLink = document.createElement('a');
+contactLink.textContent = 'Contact';
+contactLink.setAttribute('href', '#');
+document.querySelector('nav').appendChild(contactLink);
+
+const homeLink = document.createElement('a');
+homeLink.textContent = 'Home';
+homeLink.setAttribute('href', '#');
+document.querySelector('nav').prepend(homeLink);
