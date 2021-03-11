@@ -41,10 +41,21 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-// Adding Nav Links
+// nav Links
 const navLinks = document.querySelectorAll('nav a');
 for(let i = 0; i < navLinks.length; i++) {
   navLinks[i].textContent = siteContent.nav[`nav-item-${i}`];
 }
 
 // CTA Content
+let headingText = siteContent.cta.h1;
+headingText = headingText.split(" ").join("<br> ");
+document.querySelector('h1').innerHTML = headingText;
+
+document.querySelector('.cta button').textContent = siteContent.cta.button;
+
+const ctaImg = document.querySelector('#cta-img');
+ctaImg.setAttribute('src', siteContent.cta['img-src'])
+
+
+// main Content
