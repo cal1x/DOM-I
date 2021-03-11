@@ -85,3 +85,5 @@ contactInfo[0].childNodes[4].textContent = siteContent['contact']['email']
 
 
 // footer section
+const footer = document.querySelector('footer p')
+footer.textContent = siteContent['footer']['copyright'];
